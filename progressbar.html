@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress bar</title>
+</head>
+<style>
+    .progress {
+	background-color: #d8d8d8;
+	border-radius: 20px;
+	position: relative;
+	margin: 15px 0;
+	height: 20px;
+	width: 600px;
+}
+
+.progress-done {
+	background: linear-gradient(to left, #1078AD, #00aaff);
+	box-shadow: 0 3px 3px -5px #00aaff, 0 2px 5px #1078AD;
+	border-radius: 20px;
+	color: rgb(0, 0, 0);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	width: 0;
+	opacity: 0;
+	transition: 1s ease 0.3s;
+}
+</style>
+<body>
+    <div class="container">
+        <div class="progress">
+            <div class="progress-done" data-done="4.5x">
+            </div>
+        </div>
+        <button id="pre">Precedent</button>
+        <button id="sui">Suivant</button>
+    </div>
+    <script>
+        const progress = document.querySelector('.progress-done');
+        let pre = document.querySelector('#pre');
+        let sui = document.querySelector('#sui');
+        let prog = parseFloat(progress.getAttribute('data-done'));
+        progress.style.width = prog + '%';
+        progress.style.opacity = 1;
+        progress.textContent = prog/4.5 + ' / ' + '22';
+        sui.addEventListener('click' , function(){
+            if(prog < 99){
+            prog += 4.5;
+            progress.style.width = prog + '%';
+            progress.textContent = prog/4.5 + ' / ' + '22';
+            console.log(prog)
+        }
+
+        })
+        pre.addEventListener('click' , function(){
+            if(prog >4.5){
+            prog -= 4.5;
+            progress.style.width = prog + '%';
+            progress.textContent = prog/4.5 + ' / ' + '22';
+            console.log(prog)
+        }
+        })
+    </script>
+</body>
+</html>
