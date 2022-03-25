@@ -1,5 +1,5 @@
 .navBar {
-    background-image: url(../images/SVG/MergedBar-61.svg);
+    background-image: url(../Assets/SVG/MergedBar-61.svg);
     height: 10vh;
 }
 
@@ -43,6 +43,14 @@ button:hover {
 
 section {
     background-color: rgb(235, 235, 235);
+    height: 55vh;
+    margin: 0 250px ;
+    padding: 50px;
+    border: 2px solid rgb(197, 180, 180);
+}
+
+#app{
+    background-color: white;
     height: 55vh;
     margin: 0 250px ;
     padding: 50px;
