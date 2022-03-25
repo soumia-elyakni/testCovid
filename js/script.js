@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 let facteursGravitéMineurs = 0;
 let facteursGravitéMajeurs = 0;
 let facteurPronostique = 0;
@@ -164,7 +163,6 @@ if ((fievre == true || toux == true) && (malGorge == true || toux == true) && (c
 //Tout patient avec aucun symptôme :
 
 //Pour tous :
-=======
 const quiz = [
   {
     question: "Pensez-vous avoir ou avoir eu de la fièvre ces 10 derniers jours (frissons, sueurs)?",
@@ -366,4 +364,3 @@ function choix(){
   return content ;
   
 }
->>>>>>> 6e3c8fffd1cb56241011a439f5b2c5ab42aefce3
