@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,30 +7,6 @@
     <link rel="stylesheet" href="css/style.css">
     <title>INFORMATIONS</title>
 </head>
-<style>
-    .progress {
-	background-color: #d8d8d8;
-	border-radius: 20px;
-	position: relative;
-	margin: 15px 0;
-	height: 20px;
-	width: 58vw;
-}
-
-.progress-done {
-	background: linear-gradient(to left, #1078AD, #00aaff);
-	box-shadow: 0 3px 3px -5px #00aaff, 0 2px 5px #1078AD;
-	border-radius: 20px;
-	color: rgb(0, 0, 0);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: 100%;
-	width: 0;
-	opacity: 0;
-	transition: 1s ease 0.3s;
-}
-</style>
 <body>
     <header class="navBar d-flex justify-content-between align-items-center">
         <div class="ms-5">
@@ -66,70 +41,25 @@
         </div>
     </div>
 
-    <section>
-        <!-- <div id="informations">
-            <h3 class="text-primary text-center">Préambule</h3>
-            <p class="text-center">
-                L’application est fournie à titre gratuit, en l’état, uniquement à des fins d’information pour contribuer à fluidifier la prise en charge des personnes par les services d’urgences pendant l’épidémie de Coronavirus COVID-19. L’exhaustivité, l’exactitude,
-                le caractère à jour des informations et contenus mis à disposition dans cette application, ou leur adéquation à des finalités particulières, ne sont pas garantis.
-                <hr>
-            </p>
-            <p class="text-center">
-                Cette application ne substitue pas votre médecin qui est plus apte à vous donner plus de précision. <br> Les informations de cette application est le premier niveau de la détection des cas possibles du COVID-19.
-            </p>
-          </div> -->
-
-          <div class="container">
-                <div class="progress">
-                    <div class="progress-done" data-done="4.5x">
-                    </div>
+    <section id="app">
+        <div class="container">
+            <div class="progress">
+                <div class="progress-done" data-done="4.5x">
                 </div>
-                <hr>
-            
-
-
-
-            <div class="question">
+            </div>
+            <hr>
+            <div class="">
                 <p class="fs-3 text-muted fw-bold text-center" id="ques"></p>
                 <div id="contentCh"></div>
             
                 <div class="d-flex justify-content-between " style="margin-top:100px;">
-                    <button id="pre" onclick="precedent()">Precedent</button>
+                    <button class="bg-white " id="pre" onclick="precedent()">Precedent</button>
                     <button id="sui" onclick="next()">Suivant</button>
                 </div>
             </div>
         </div>
     </section>
-    <!-- <a href="#" class="d-flex justify-content-center align-items-center text-decoration-none w-100 h-100 mt-3"><button class="border border-primary border-3 rounded-pill text-primary w-25 py-3" type="">Démarrer le test</button></a> -->
-    <script src="css/style.css"></script>
-    <script>
-        const progress = document.querySelector('.progress-done');
-        let pre = document.querySelector('#pre');
-        let sui = document.querySelector('#sui');
-        let prog = parseFloat(progress.getAttribute('data-done'));
-       
-        progress.style.width = prog + '%';
-        progress.style.opacity = 1;
-        progress.textContent = prog / 4.5 + ' / ' + '22';
-        sui.addEventListener('click' , function(){
-            if(prog <= 99){
-    
-            prog += 100/22;
-            progress.style.width = prog + '%';
-            progress.textContent = parseInt(prog/4.5) + ' / ' + '22';
-            console.log(prog)
-        }
-
-        })
-        pre.addEventListener('click' , function(){
-            if(prog >4.5){
-            prog -= 4.5;
-            progress.style.width = prog + '%';
-            progress.textContent = prog/4.5 + ' / ' + '22';
-            console.log(prog)
-        }
-        })
-    </script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
