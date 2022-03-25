@@ -1,3 +1,30 @@
+const progress = document.querySelector('.progress-done');
+let pre = document.querySelector('#pre');
+let sui = document.querySelector('#sui');
+let prog = parseFloat(progress.getAttribute('data-done'));
+
+progress.style.width = prog + '%';
+progress.style.opacity = 1;
+progress.textContent = prog / 4.5 + ' / ' + '22';
+sui.addEventListener('click' , function(){
+    if(prog <= 99){
+
+    prog += 100/22;
+    progress.style.width = prog + '%';
+    progress.textContent = parseInt(prog/4.5) + ' / ' + '22';
+    console.log(prog)
+}
+
+})
+pre.addEventListener('click' , function(){
+    if(prog >4.5){
+    prog -= 4.5;
+    progress.style.width = prog + '%';
+    progress.textContent = prog/4.5 + ' / ' + '22';
+    console.log(prog)
+}
+})
+
 const quiz = [
   {
     question: "Pensez-vous avoir ou avoir eu de la fièvre ces 10 derniers jours (frissons, sueurs)?",
