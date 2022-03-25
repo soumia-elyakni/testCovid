@@ -150,7 +150,7 @@ if ((fievre == true || toux == true) && (malGorge == true || toux == true) && (c
     if (facteursGravitéMajeurs >= 1) {
         console.log('Appel 141')
     }
-
+    
 } else if (fievre == true && toux == true) {
 
 } else if (fievre == true || toux == true || malGorge == true || courbatures == true) {
