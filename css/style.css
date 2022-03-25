@@ -1,5 +1,9 @@
 .navBar {
+<<<<<<< HEAD
     /* background-image: url(Assets/SVG/MergedBar-61.svg); */
+=======
+    background-image: url(Assets/SVG/MergedBar-61.svg);
+>>>>>>> 6e3c8fffd1cb56241011a439f5b2c5ab42aefce3
     height: 10vh;
 }
 
@@ -15,6 +19,10 @@ body {
 
 .leftSide {
     width: 50%;
+<<<<<<< HEAD
+=======
+    /* background-color: violet; */
+>>>>>>> 6e3c8fffd1cb56241011a439f5b2c5ab42aefce3
 }
 
 .rightSide {
@@ -42,9 +50,17 @@ button:hover {
 }
 
 section {
+<<<<<<< HEAD
     margin: 0 100px 0 100px;
     padding: 50px;
     background-color: rgb(235, 235, 235);
+=======
+    height: 55vh;
+    margin: 0 250px ;
+    padding: 50px;
+    /* background-color: rgb(235, 235, 235); */
+    border: 2px solid rgb(197, 180, 180);
+>>>>>>> 6e3c8fffd1cb56241011a439f5b2c5ab42aefce3
 }
 
 header>div>ul>li>.flag {
