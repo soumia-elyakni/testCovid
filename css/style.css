@@ -42,10 +42,10 @@ button:hover {
 }
 
 section {
+    background-color: rgb(235, 235, 235);
     height: 55vh;
     margin: 0 250px ;
     padding: 50px;
-    /* background-color: rgb(235, 235, 235); */
     border: 2px solid rgb(197, 180, 180);
 }
 
