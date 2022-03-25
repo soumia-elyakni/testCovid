@@ -185,12 +185,8 @@ const quiz = [
 const ques = document.getElementById("ques");
 const contentCh = document.getElementById("contentCh");
 
-// for (let i = 0; i < quiz.length; i++){
-//    document.body.innerHTML += `${quiz[i].question} <br>`;
-// }
-
 var cont = 0 ;
-ques.innerHTML = `${quiz[cont].question} `;
+ques.innerHTML = `${quiz[cont].question}`;
 contentCh.innerHTML += choix();
 
 
@@ -200,13 +196,12 @@ function next(){
   cont++;
   ques.innerHTML = `${quiz[cont].question} `;
   contentCh.innerHTML = choix();
-  
 }
+
 function precedent(){
   cont--;
   ques.innerHTML = `${quiz[cont].question} `;
   contentCh.innerHTML = choix();
-
 }
 
 
@@ -224,5 +219,4 @@ function choix(){
   }
 
   return content ;
-  
 }
