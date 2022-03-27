@@ -1,9 +1,5 @@
 .navBar {
-<<<<<<< HEAD
-    /* background-image: url(Assets/SVG/MergedBar-61.svg); */
-=======
-    background-image: url(Assets/SVG/MergedBar-61.svg);
->>>>>>> 6e3c8fffd1cb56241011a439f5b2c5ab42aefce3
+    background-image: url(../Assets/SVG/MergedBar-61.svg);
     height: 10vh;
 }
 
@@ -19,10 +15,6 @@ body {
 
 .leftSide {
     width: 50%;
-<<<<<<< HEAD
-=======
-    /* background-color: violet; */
->>>>>>> 6e3c8fffd1cb56241011a439f5b2c5ab42aefce3
 }
 
 .rightSide {
@@ -33,7 +25,7 @@ body {
     width: 100%;
 }
 
-button {
+button{
     background-image: url(Assets/SVG/MergedBar-61.svg);
     background-repeat: no-repeat;
 }
@@ -50,17 +42,19 @@ button:hover {
 }
 
 section {
-<<<<<<< HEAD
-    margin: 0 100px 0 100px;
-    padding: 50px;
     background-color: rgb(235, 235, 235);
-=======
     height: 55vh;
     margin: 0 250px ;
     padding: 50px;
-    /* background-color: rgb(235, 235, 235); */
     border: 2px solid rgb(197, 180, 180);
->>>>>>> 6e3c8fffd1cb56241011a439f5b2c5ab42aefce3
+}
+
+#app{
+    background-color: white;
+    height: 55vh;
+    margin: 0 250px ;
+    padding: 50px;
+    border: 2px solid rgb(197, 180, 180);
 }
 
 header>div>ul>li>.flag {
@@ -90,16 +84,30 @@ header>div>ul>li>a>img {
     .leftSide {
         width: 100%;
     }
-    /* header>.logo {
-        margin-left: 0 !important;
-    } */
-    header>.logo>a {
-        /* margin-left: 25px !important; */
-    }
-    /* header>.menu {
-        margin-right: 0 !important;
-    } */
     header>.menu>ul {
         margin-right: 0 !important;
     }
+}
+
+.progress {
+	background-color: #d8d8d8;
+	border-radius: 20px;
+	position: relative;
+	margin: 15px 0;
+	height: 20px;
+	width: 58vw;
+}
+
+.progress-done {
+	background: linear-gradient(to left, #1078AD, #00aaff);
+	box-shadow: 0 3px 3px -5px #00aaff, 0 2px 5px #1078AD;
+	border-radius: 20px;
+	color: rgb(0, 0, 0);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	width: 0;
+	opacity: 0;
+	transition: 1s ease 0.3s;
 }
