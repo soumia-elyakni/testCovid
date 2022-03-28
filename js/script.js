@@ -188,19 +188,35 @@ const contentCh = document.getElementById("contentCh");
 
 var cont = 0;
 ques.innerHTML = `${quiz[cont].question}`;
-contentCh.innerHTML += choix();
+contentCh.innerHTML = choix();
+if(cont == 0){
+  pre.style.visibility = "hidden"
+}
 
-function next() {
+
+
+function next(){
   cont++;
   ques.innerHTML = `${quiz[cont].question} `;
   contentCh.innerHTML = choix();
+  if(cont > 0 && cont <= 20){
+    pre.style.visibility = "visible"
+  }
+  else if(cont == 21){
+    sui.innerText = "Termine"
+  }
 }
 
 function precedent(){
     cont--;
     ques.innerHTML = `${quiz[cont].question} `;
     contentCh.innerHTML = choix();
+    if(cont == 0){
+      pre.style.visibility = "hidden"
+    }
 }
+
+
 
 
 function choix() {
@@ -212,21 +228,27 @@ function choix() {
     }
   }
 
-  if (quiz[cont].type == "number") {
-        content += '<input type="'+ quiz[cont].type +'" max="'+ quiz[cont].choix[1]+'" min="'+quiz[cont].choix[0]+'" id="num" oninput="checkNum()" value="'+quiz[cont].choix+'" placeholder="' + quiz[cont].choix[1] + '-' + quiz[cont].choix[0] + '">'
+  if(quiz[cont].type == "number") {
+        content += '<input type="'+ quiz[cont].type +'" max="'+ quiz[cont].choix[1]+'" min="'+quiz[cont].choix[0]+'" id="num" oninput="checkNum()" value="'+quiz[cont].choix+'" placeholder="' + quiz[cont].choix[1] +' - '+ quiz[cont].choix[0] + '">'
   }
-    return content;
-
+  return content;
 }
 
 function check(i){
+  if(quiz[cont].choix[i] !=  ""){
+    sui.disabled = false;
+  }
   quiz[cont].reponse = quiz[cont].choix[i]
 }
 
 function checkNum(){
+  if(quiz[cont].choix[i] !=  ""){
+    sui.disabled = false;
+  }
   let num = document.getElementById('num')
   quiz[cont].reponse =  num.value
 }
+
 
 let facteursGravitéMineurs = 0;
 let facteursGravitéMajeurs = 0;
@@ -253,7 +275,7 @@ let enceiente = false;
 let diminutionImmunitaire = false;
 let traitementImmunosuppresseur = false;
 
-//qst1 : FIEVRE
+//qst1 : FIEVRE33
 if (quiz[cont].reponse == 'oui') {
   fievre == true;
 }
