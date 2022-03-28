@@ -52,10 +52,13 @@
             <hr>
             <div class="w-100">
                 <p class="fs-3 text-muted fw-bold text-center" id="ques"></p>
-                <div id="contentCh" class="text-center"></div>
-                <div class="d-flex justify-content-between " style="margin-top:50px;">
-                    <button class="border border-primary border-3 rounded" id="pre" onclick="precedent()">Precedent</button>
-                    <button class="border border-primary border-3 rounded" id="sui" onclick="next()">Suivant</button>
+                <div id="contentCh"></div>
+                <div class="d-flex justify-content-between " style="margin-top:100px;">
+                    <button type="button" class="btn btn-primary shadow-none" id="pre" onclick="precedent()">Precedent</button>
+                    <button type="button" class="btn btn-primary shadow-none" id="sui" disabled onclick="next()">Suivant</button>
+                    <!-- <button class="" id="pre" onclick="precedent()">Precedent</button> -->
+                    <!-- <button id="sui" onclick="next()">Suivant</button> -->
+
                 </div>
             </div>
         </div>
