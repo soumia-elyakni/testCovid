@@ -188,23 +188,23 @@ const quiz = [
     type: "radio",
     reponse: null
   },
-
 ]
 
 const ques = document.getElementById("ques");
 const contentCh = document.getElementById("contentCh");
 
-var cont = 0 ;
+var cont = 0;
 ques.innerHTML = `${quiz[cont].question}`;
 contentCh.innerHTML += choix();
 
 function next() {
-    cont++;
-    ques.innerHTML = `${quiz[cont].question} `;
-    contentCh.innerHTML = choix();
+  cont++;
+  ques.innerHTML = `${quiz[cont].question} `;
+  contentCh.innerHTML = choix();
+
 }
 
-function precedent() {
+function precedent(){
     cont--;
     ques.innerHTML = `${quiz[cont].question} `;
     contentCh.innerHTML = choix();
@@ -218,17 +218,22 @@ function choix() {
     for(let i = 0 ; i <= quiz[cont].choix.length-1; i++){
       content +=  '<input type="'+ quiz[cont].type +'" value="'+quiz[cont].choix[i]+'" onclick="check('+ i +')" name="ouiAndNon"> <label for="'+quiz[cont].choix[i]+'">'+quiz[cont].choix[i]+'</label>';
     }
-    
   }
-    if (quiz[cont].type == "number") {
-        content += '<input type="number"  max="' + quiz[cont].choix[1] + '" min="' + quiz[cont].choix[0] + '" placeholder="' + quiz[cont].choix[1] + '-' + quiz[cont].choix[0] + '">'
-    }
+
+  if (quiz[cont].type == "number") {
+        content += '<input type="'+ quiz[cont].type +'" max="'+ quiz[cont].choix[1]+'" min="'+quiz[cont].choix[0]+'" id="num" oninput="checkNum()" value="'+quiz[cont].choix+'" placeholder="' + quiz[cont].choix[1] + '-' + quiz[cont].choix[0] + '">'
+  }
     return content;
 
 }
 
 function check(i){
-  quiz[cont].reponse =  quiz[cont].choix[i]
+  quiz[cont].reponse = quiz[cont].choix[i]
+}
+
+function checkNum(){
+  let num = document.getElementById('num')
+  quiz[cont].reponse =  num.value
 }
 
 let facteursGravitéMineurs = 0;
@@ -345,5 +350,5 @@ if (quiz[cont].reponse == 'oui') {
 }
 
 
-const st = document.querySelector('#steper')
-console.log(st)
+
+
