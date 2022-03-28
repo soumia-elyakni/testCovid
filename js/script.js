@@ -3,6 +3,13 @@ const progress = document.querySelector('.progress-done');
 let pre = document.querySelector('#pre');
 let sui = document.querySelector('#sui');
 let prog = parseFloat(progress.getAttribute('data-done'));
+let cir=document.querySelector('.circle1');
+let activecircle=document.querySelector('.circle2');
+let circle=document.querySelector('.circle3');
+
+activecircle.style.backgroundColor= '#FFFF00';
+activecircle.removeAttribute("id");
+
 
 progress.style.width = prog + '%';
 progress.style.opacity = 1;
@@ -337,3 +344,7 @@ if (quiz[cont].reponse == 'oui') {
 if (quiz[cont].reponse == 'oui') {
   traitementImmunosuppresseur = true;
 }
+
+
+const st = document.querySelector('#steper')
+console.log(st)
