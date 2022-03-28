@@ -1,3 +1,4 @@
+// Progress Bar 
 const progress = document.querySelector('.progress-done');
 let pre = document.querySelector('#pre');
 let sui = document.querySelector('#sui');
@@ -25,6 +26,7 @@ pre.addEventListener('click' , function(){
 }
 })
 
+// Quiz de Question
 const quiz = [
   {
     question: "Pensez-vous avoir ou avoir eu de la fièvre ces 10 derniers jours (frissons, sueurs)?",
@@ -189,24 +191,22 @@ var cont = 0 ;
 ques.innerHTML = `${quiz[cont].question}`;
 contentCh.innerHTML += choix();
 
+function next() {
+    cont++;
+    ques.innerHTML = `${quiz[cont].question} `;
+    contentCh.innerHTML = choix();
 
-
-
-function next(){
-  cont++;
-  ques.innerHTML = `${quiz[cont].question} `;
-  contentCh.innerHTML = choix();
 }
 
-function precedent(){
-  cont--;
-  ques.innerHTML = `${quiz[cont].question} `;
-  contentCh.innerHTML = choix();
+function precedent() {
+    cont--;
+    ques.innerHTML = `${quiz[cont].question} `;
+    contentCh.innerHTML = choix();
 }
 
 
-function choix(){
-  var content = "";
+function choix() {
+    var content = "";
 
   if(quiz[cont].type == "radio"){
     for(let i = 0 ; i <= quiz[cont].choix.length-1; i++){
@@ -214,15 +214,126 @@ function choix(){
     }
     
   }
+    if (quiz[cont].type == "number") {
+        content += '<input type="number"  max="' + quiz[cont].choix[1] + '" min="' + quiz[cont].choix[0] + '" placeholder="' + quiz[cont].choix[1] + '-' + quiz[cont].choix[0] + '">'
+    }
+    return content;
 
-  if(quiz[cont].type == "number" ){
-    content += '<input type="number"  max="'+quiz[cont].choix[1]+'" min="'+quiz[cont].choix[0]+'" placeholder="'+quiz[cont].choix[1]+'-'+quiz[cont].choix[0]+'">'
-  }
-
-  return content ;
 }
 
 function check(i){
   quiz[cont].reponse =  quiz[cont].choix[i]
-  console.log(quiz[cont].reponse)
+}
+
+let facteursGravitéMineurs = 0;
+let facteursGravitéMajeurs = 0;
+let facteurPronostique = 0;
+let fievre = false;
+let toux = false;
+let courbatures = false;
+let malGorge = false;
+let diarrhee = false;
+let fatigue = false;
+let difficulteAvalaison = false;
+let manqueSouffle = false;
+let sensation = '';
+
+//FACTEURS PRONOSTIQUES
+let age;
+let hypertension = false;
+let diabete = false;
+let cancer = false;
+let maladieRespiratoire = false;
+let dialyse = false;
+let foie = false;
+let enceiente = false;
+let diminutionImmunitaire = false;
+let traitementImmunosuppresseur = false;
+
+//qst1 : FIEVRE
+if (quiz[cont].reponse == 'oui') {
+  fievre == true;
+}
+
+//qst3 : TOUX
+if (quiz[cont].reponse == 'oui') {
+  toux = true;
+}
+
+//qst4 : COURBATURES 
+if (quiz[cont].reponse == 'oui') {
+  courbatures = true;
+}
+
+//qst5 : MAL DE GORGE
+if (quiz[cont].reponse == 'oui') {
+  malGorge = true;
+}
+
+//qst6 : DIARREE
+if (quiz[cont].reponse == 'oui') {
+  diarrhee = true
+}
+
+//qst7 :  FATIGUE
+if (quiz[cont].reponse == 'oui') {
+  fatigue = true;
+  facteursGravitéMineurs++;
+}
+
+//qst8 : DIFFICULTES D'AVALAISON
+if (quiz[cont].reponse == 'oui') {
+  difficulteAvalaison = true;
+  facteursGravitéMajeurs++;
+}
+
+//qst9 : MANQUE DE SOUFFLE
+if (quiz[cont].reponse == 'oui') {
+  manqueSouffle = true;
+  facteursGravitéMajeurs++;
+}
+
+//qst14 : l’hypertension, maladie cardiaque ou vasculaire
+if (quiz[cont].reponse == 'oui') {
+  hypertension = true;
+}
+
+//qst15 : DIABETE
+if (quiz[cont].reponse == 'oui') {
+  diabete = true;
+}
+
+//qst16 : CANCER
+if (quiz[cont].reponse == 'oui') {
+  cancer = true
+}
+
+//qst17 : Maladie respiratoire
+if (quiz[cont].reponse == 'oui') {
+  maladieRespiratoire = true;
+}
+
+//qst18 : Insuffisance rénale chronique dialysée
+if (quiz[cont].reponse == 'oui') {
+  dialyse = true;
+}
+
+//qst19 : MALADIE DU FOIE
+if (quiz[cont].reponse == 'oui') {
+  foie = true
+}
+
+//qst20 : ENCEINTE
+if (quiz[cont].reponse == 'oui') {
+  enceiente = true;
+}
+
+//qst21 : une maladie connue pour diminuer vos défenses immunitaires
+if (quiz[cont].reponse == 'oui') {
+  diminutionImmunitaire = true;
+}
+
+//qst22 : traitement immunosuppresseur
+if (quiz[cont].reponse == 'oui') {
+  traitementImmunosuppresseur = true;
 }
