@@ -139,13 +139,15 @@ if ((fievre == true || toux == true) && (malGorge == true || toux == true) && (c
         if (facteursGravité == 0 && age < 50) {
             console.log(' nous vous conseillons de rester à votre domicile et de contacter votre médecin en cas d’ apparition de nouveaux symptômes.Vous pourrez aussi utiliser à nouveau l’ application pour réévaluer vos symptômes.')
         }
+
         if ((facteursGravité == 0 && age > 50 && age < 69) || facteursGravitéMineurs >= 1) {
             console.log('téléconsultation ou médecin généraliste ou visite à domicile')
             if (manqueSouffle == true || difficulteAvalaison == true) {
                 console.log('appelez le 141 ')
             }
         }
-    } else if (facteurPronostique >= 1) {
+    } else
+    if (facteurPronostique >= 1) {
         if (facteursGravité == 0) {
             console.log(': téléconsultation ou médecin généraliste ou visite à domicile')
             if (manqueSouffle == true || difficulteAvalaison == true) {
