@@ -3,9 +3,9 @@ const progress = document.querySelector('.progress-done');
 let pre = document.querySelector('#pre');
 let sui = document.querySelector('#sui');
 let prog = parseFloat(progress.getAttribute('data-done'));
-let cir=document.querySelector('.circle1');
-let activecircle=document.querySelector('.circle2');
-let circle=document.querySelector('.circle3');
+let cir = document.querySelector('.circle1');
+let activecircle = document.querySelector('.circle2');
+let circle = document.querySelector('.circle3');
 
 activecircle.style.backgroundColor= '#FFFF00';
 activecircle.removeAttribute("id");
@@ -202,7 +202,6 @@ function next() {
     cont++;
     ques.innerHTML = `${quiz[cont].question} `;
     contentCh.innerHTML = choix();
-
 }
 
 function precedent() {

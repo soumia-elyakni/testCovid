@@ -30,15 +30,15 @@
     </header>
     <div id="steper" class="d-flex justify-content-around m-5 px-5">
         <div class="info d-flex flex-column align-items-center">
-            <div class="circle1 bg-primary"></div>
+            <div class="circle circle1 "  id="cir-blue"></div>
             <p>Informations</p>
         </div>
         <div class="qst d-flex flex-column align-items-center">
-            <div class="circle2 bg-primary"></div>
+            <div class=" circle circle2 " id="cir-blue"></div>
             <p>Questionnaire</p>
         </div>
         <div class="result d-flex flex-column align-items-center">
-            <div class="circle3 bg-primary"></div>
+            <div class="circle circle3 "  id="cir-blue"></div>
             <p>Résultats</p>
         </div>
     </div>
@@ -57,15 +57,16 @@
         </div>
     </section>
     <a href="question.html" class="d-flex justify-content-center align-items-center text-decoration-none w-100 h-100 mt-3"><button class="border border-primary border-3 rounded-pill text-primary w-25 py-3" type="">Démarrer le test</button></a>
-    <script src="js/script.js"></script>
+    
     <script>
-        let cir=document.querySelector('.circle2');
+let cir=document.querySelector('.circle2');
 let activecircle=document.querySelector('.circle1');
 let circle=document.querySelector('.circle3');
 
 activecircle.style.backgroundColor= '#FFFF00';
 activecircle.removeAttribute("id");
     </script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
