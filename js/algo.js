@@ -24,10 +24,10 @@ let traitementImmunosuppresseur = false;
 
 
 
-//qst1 : FIEVRE
-if (reponse == 'oui') {
-    fievre == true;
-}
+    //qst1 : FIEVRE
+    if (reponse == 'oui') {
+        fievre == true;
+    }
 
 //qst2 : TEMPERATURE
 if (temperature >= 39) {
@@ -133,7 +133,7 @@ if (reponse == 'oui') {
 if ((fievre == true || toux == true) && (malGorge == true || toux == true) && (courbatures == true || fievre == true) && (diarrhee == true)) {
     if (facteurPronostique == 0) {
         if (facteursGravitéMajeurs == 0 && facteursGravitéMineurs == 0 && age < 50) {
-            console.log(' nous vous conseillons de rester à votre domicile et de contacter votre médecin en cas d’ apparition de nouveaux symptômes.Vous pourrez aussi utiliser à nouveau l’ application pour réévaluer vos symptômes.')
+            console.log(' nous vous conseillons de rester à votre domicile et de contacter votre médecin en cas d’apparition de nouveaux symptômes.Vous pourrez aussi utiliser à nouveau l’application pour révaluer vos symptômes.')
         }
         if ((facteursGravitéMajeurs == 0 && facteursGravitéMineurs == 0 && age > 50 && age < 69) || facteursGravitéMineurs >= 1) {
             console.log('téléconsultation ou médecin généraliste ou visite à domicile')
