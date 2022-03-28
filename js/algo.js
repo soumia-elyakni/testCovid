@@ -194,8 +194,3 @@ if ((fievre == true || toux == true) && (malGorge == true || toux == true) && (c
 } else if (facteursPronostiques == 0 && facteursGravité == 0) {
     console.log('Votre situation ne relève probablement pas du Covid-19. N’hésitez pas à contacter votre médecin en cas de doute.Vous pouvez refaire le test en cas de nouveau symptôme pour réévaluer la situation.Pour toute information concernant le Covid - 19 allez vers la page d’ accueil.')
 }
-//Patient avec fièvre, ou toux + mal de gorge, ou toux + courbatures ou fièvre + diarrhée :
-//Tout patient avec fièvre et toux :
-//Tout patient avec un seul symptôme parmi fièvre, toux, mal de gorge, courbatures :
-//Tout patient avec aucun symptôme :
-//Pour tous :

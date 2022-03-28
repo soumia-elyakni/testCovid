@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>INFORMATIONS</title>
+    <title>Questionnaire</title>
 </head>
+
 <body>
     <header class="navBar d-flex justify-content-between align-items-center">
         <div class="ms-5">
@@ -21,14 +23,14 @@
                     <a class="nav-link" href="index.html">Accueil</a>
                 </li>
                 <li>
-                    <a class="flag nav-link" href="#"><img class="flag" src="/images/maroc.png" alt=""></a>
+                    <a class="flag nav-link" href="#"><img class="flag" src="Assets/images/maroc.png" alt=""></a>
                 </li>
             </ul>
         </div>
     </header>
     <div id="steper" class="d-flex justify-content-around m-5 px-5">
         <div class="info d-flex flex-column align-items-center">
-            <div class="circle circle1 "  id="cir-blue"></div>
+            <div class="circle circle1 " id="cir-blue"></div>
             <p>Informations</p>
         </div>
         <div class="qst d-flex flex-column align-items-center">
@@ -36,24 +38,24 @@
             <p>Questionnaire</p>
         </div>
         <div class="result d-flex flex-column align-items-center">
-            <div class="circle circle3 "  id="cir-blue"></div>
+            <div class="circle circle3 " id="cir-blue"></div>
             <p>Résultats</p>
         </div>
     </div>
 
     <section id="app">
-        <div class="container">
+        <div class="container d-flex flex-column align-items-center">
             <div class="progress">
                 <div class="progress-done" data-done="4.5x">
                 </div>
             </div>
             <hr>
-            <div class="">
+            <div class="w-100">
                 <p class="fs-3 text-muted fw-bold text-center" id="ques"></p>
-                <div id="contentCh"></div>
-                <div class="d-flex justify-content-between " style="margin-top:100px;">
-                    <button class="bg-white " id="pre" onclick="precedent()">Precedent</button>
-                    <button id="sui" onclick="next()">Suivant</button>
+                <div id="contentCh" class="text-center"></div>
+                <div class="d-flex justify-content-between " style="margin-top:50px;">
+                    <button class="border border-primary border-3 rounded" id="pre" onclick="precedent()">Precedent</button>
+                    <button class="border border-primary border-3 rounded" id="sui" onclick="next()">Suivant</button>
                 </div>
             </div>
         </div>
