@@ -3,10 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Questionnaire</title>
+    <title>Resultats</title>
 </head>
 
 <body>
@@ -20,7 +19,7 @@
                     <a class="nav-link active" aria-current="page" href="#">Conseils</a>
                 </li>
                 <li>
-                    <a class="nav-link" href="index.html">Accueil</a>
+                    <a class="nav-link" href="../index.html">Accueil</a>
                 </li>
                 <li>
                     <a class="flag nav-link" href="#"><img class="flag" src="Assets/images/maroc.png" alt=""></a>
@@ -28,7 +27,6 @@
             </ul>
         </div>
     </header>
-
     <div id="steper" class="d-flex justify-content-around m-5 px-5">
         <div class="info d-flex flex-column align-items-center">
             <div class="circle circle1 " id="cir-blue"></div>
@@ -44,23 +42,28 @@
         </div>
     </div>
 
-    <section id="app">
-        <div class="container d-flex flex-column align-items-center">
-            <div class="progress">
-                <div class="progress-done" data-done="4.5x">
-                </div>
-            </div>
-            <hr>
-            <div class="w-100">
-                <p class="fs-3 text-muted fw-bold text-center" id="ques"></p>
-                <div id="contentCh"></div>
-                <div class="d-flex justify-content-between " style="margin-top:100px;">
-                    <button type="button" class="btn btn-primary shadow-none" id="pre" onclick="precedent()">Precedent</button>
-                    <button type="button" class="btn btn-primary shadow-none" id="sui" onclick="next()">Suivant</button>
-                </div>
-            </div>
+    <section>
+        <div class="" id="informations">
+            <h3 class="text-primary text-center">Résultats</h3>
+            <p class="text-center text-success">
+
+                <hr>
+            </p>
+            <p class="text-center text-primary">
+                Restez chez vous au maximum en attendant que les symptômes disparaissent. Prenez votre température deux fois par jour. Rappel des mesures d’hygiène.
+            </p>
         </div>
     </section>
+    <a href="question.html" class="d-flex justify-content-center align-items-center text-decoration-none w-100 h-100 mt-3"><button class="border border-primary border-3 rounded-pill text-primary w-25 py-3" type="">Démarrer le test</button></a>
+
+    <script>
+        let cir = document.querySelector('.circle2');
+        let activecircle = document.querySelector('.circle1');
+        let circle = document.querySelector('.circle3');
+
+        activecircle.style.backgroundColor = '#FFFF00';
+        activecircle.removeAttribute("id");
+    </script>
     <script src="js/script.js"></script>
 </body>
 
