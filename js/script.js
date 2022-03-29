@@ -20,16 +20,15 @@ sui.addEventListener('click', function() {
         prog += 100 / 22;
         progress.style.width = prog + '%';
         progress.textContent = parseInt(prog / 4.5) + ' / ' + '22';
-        console.log(prog)
+
     }
 
 })
 pre.addEventListener('click', function() {
     if (prog > 4.5) {
-        prog -= 4.5;
+        prog -= 100 / 22;
         progress.style.width = prog + '%';
-        progress.textContent = prog / 4.5 + ' / ' + '22';
-        console.log(prog)
+        progress.textContent = parseInt(prog / 4.5) + ' / ' + '22';
     }
 })
 
@@ -195,6 +194,7 @@ const contentCh = document.getElementById("contentCh");
 var cont = 0;
 ques.innerHTML = `${quiz[cont].question}`;
 contentCh.innerHTML = choix();
+
 if (cont == 0) {
     pre.style.visibility = "hidden"
 }
@@ -209,7 +209,6 @@ function next() {
     } else if (cont == 21) {
         sui.innerText = "Termine"
     }
-
 }
 
 function precedent() {
@@ -219,9 +218,10 @@ function precedent() {
     if (cont == 0) {
         pre.style.visibility = "hidden"
     }
+    cont--;
+    ques.innerHTML = `${quiz[cont].question} `;
+    contentCh.innerHTML = choix();
 }
-
-
 
 
 function choix() {
@@ -252,7 +252,6 @@ function checkNum() {
     }
     quiz[cont].reponse = num.value
 }
-
 
 //FACTEURS DE GRAVITES (si un element dans l'objet est incrementé l'objet aussi sera incrementé et si les 2 egal 0 l'objet aussi = 0)
 let facteursGravité = {
@@ -302,9 +301,11 @@ if (temperature <= 35.4) {
 //qst1 : FIEVRE33
 if (quiz[cont].reponse == 'oui') {
     fievre == true;
+
 }
 
 //qst3 : TOUX
+
 if (quiz[2].reponse == 'oui') {
     symptômes.toux = true;
 }
@@ -340,6 +341,42 @@ if (quiz[7].reponse == 'oui') {
 if (quiz[8].reponse == 'oui') {
     symptômes.manqueSouffle = true;
     facteursGravité.facteursGravitéMajeurs++;
+    if (quiz[cont].reponse == 'oui') {
+        toux = true;
+    }
+}
+
+//qst4 : COURBATURES 
+if (quiz[cont].reponse == 'oui') {
+    courbatures = true;
+}
+
+//qst5 : MAL DE GORGE
+if (quiz[cont].reponse == 'oui') {
+    malGorge = true;
+}
+
+//qst6 : DIARREE
+if (quiz[cont].reponse == 'oui') {
+    diarrhee = true
+}
+
+//qst7 :  FATIGUE
+if (quiz[cont].reponse == 'oui') {
+    fatigue = true;
+    facteursGravitéMineurs++;
+}
+
+//qst8 : DIFFICULTES D'AVALAISON
+if (quiz[cont].reponse == 'oui') {
+    difficulteAvalaison = true;
+    facteursGravitéMajeurs++;
+}
+
+//qst9 : MANQUE DE SOUFFLE
+if (quiz[cont].reponse == 'oui') {
+    manqueSouffle = true;
+    facteursGravitéMajeurs++;
 }
 
 //qst10 : SENSATION
@@ -352,6 +389,7 @@ if (sensation == 'fatigué' || sensation == 'très fatigué') {
 //qst13 : TAILLE
 
 //qst14 : l’hypertension, maladie cardiaque ou vasculaire
+
 if (quiz[13].reponse == 'oui') {
     facteursPronostiques.hypertension = true;
 }
@@ -453,4 +491,47 @@ if (symptômes.fievre == true && symptômes.toux == true) {
     }
 } else if (facteursPronostiques == 0 && facteursGravité == 0) {
     quiz.push('Votre situation ne relève probablement pas du Covid-19. N’hésitez pas à contacter votre médecin en cas de doute.Vous pouvez refaire le test en cas de nouveau symptôme pour réévaluer la situation.Pour toute information concernant le Covid - 19 allez vers la page d’ accueil.')
+}
+if (quiz[cont].reponse == 'oui') {
+    hypertension = true;
+}
+
+//qst15 : DIABETE
+if (quiz[cont].reponse == 'oui') {
+    diabete = true;
+}
+
+//qst16 : CANCER
+if (quiz[cont].reponse == 'oui') {
+    cancer = true
+}
+
+//qst17 : Maladie respiratoire
+if (quiz[cont].reponse == 'oui') {
+    maladieRespiratoire = true;
+}
+
+//qst18 : Insuffisance rénale chronique dialysée
+if (quiz[cont].reponse == 'oui') {
+    dialyse = true;
+}
+
+//qst19 : MALADIE DU FOIE
+if (quiz[cont].reponse == 'oui') {
+    foie = true
+}
+
+//qst20 : ENCEINTE
+if (quiz[cont].reponse == 'oui') {
+    enceiente = true;
+}
+
+//qst21 : une maladie connue pour diminuer vos défenses immunitaires
+if (quiz[cont].reponse == 'oui') {
+    diminutionImmunitaire = true;
+}
+
+//qst22 : traitement immunosuppresseur
+if (quiz[cont].reponse == 'oui') {
+    traitementImmunosuppresseur = true;
 }
