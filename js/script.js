@@ -20,17 +20,16 @@ sui.addEventListener('click' , function(){
     prog += 100/22;
     progress.style.width = prog + '%';
     progress.textContent = parseInt(prog/4.5) + ' / ' + '22';
-    console.log(prog)
+    
 }
 
 })
 pre.addEventListener('click' , function(){
     if(prog > 4.5){
-    prog -= 4.5;
+    prog -= 100/22;
     progress.style.width = prog + '%';
-    progress.textContent = prog/4.5 + ' / ' + '22';
-    console.log(prog)
-}
+    progress.textContent = parseInt(prog/4.5) + ' / ' + '22';
+    }
 })
 
 // Quiz de Question
@@ -229,7 +228,9 @@ function choix() {
 
 function check(i){
   quiz[cont].reponse = quiz[cont].choix[i]
+   
 }
+
 
 function checkNum(){
   let num = document.getElementById('num')
@@ -264,6 +265,7 @@ let traitementImmunosuppresseur = false;
 //qst1 : FIEVRE
 if (quiz[cont].reponse == 'oui') {
   fievre == true;
+  
 }
 
 //qst3 : TOUX
