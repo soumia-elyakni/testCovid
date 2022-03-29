@@ -138,59 +138,60 @@ if (reponse == 'oui') {
 }
 
 //RESULTS
-if ((fievre == true || toux == true) && (malGorge == true || toux == true) && (courbatures == true || fievre == true) && (diarrhee == true)) {
+if ((symptômes.fievre == true || symptômes.toux == true) && (symptômes.malGorge == true || symptômes.toux == true) && (symptômes.courbatures == true || symptômes.fievre == true) && (symptômes.diarrhee == true)) {
     if (facteursPronostiques == 0) {
         if (facteursGravité == 0 && age < 50) {
-            console.log(' nous vous conseillons de rester à votre domicile et de contacter votre médecin en cas d’ apparition de nouveaux symptômes.Vous pourrez aussi utiliser à nouveau l’ application pour réévaluer vos symptômes.')
+            quiz.push(' nous vous conseillons de rester à votre domicile et de contacter votre médecin en cas d’ apparition de nouveaux symptômes.Vous pourrez aussi utiliser à nouveau l’ application pour réévaluer vos symptômes.')
         }
 
         if ((facteursGravité == 0 && age > 50 && age < 69) || facteursGravitéMineurs >= 1) {
-            console.log('téléconsultation ou médecin généraliste ou visite à domicile')
+            a.push('téléconsultation ou médecin généraliste ou visite à domicile')
             if (manqueSouffle == true || difficulteAvalaison == true) {
-                console.log('appelez le 141 ')
+                a.push('appelez le 141 ')
             }
         }
     } else
     if (facteursPronostiques >= 1) {
         if (facteursGravité == 0) {
-            console.log('téléconsultation ou médecin généraliste ou visite à domicile')
+            quiz.push('téléconsultation ou médecin généraliste ou visite à domicile')
             if (manqueSouffle == true || difficulteAvalaison == true) {
-                console.log('appelez le 141 ')
+                a.push('appelez le 141 ')
             }
         } else if (facteursGravitéMineurs == 1) {
-            console.log('téléconsultation ou médecin généraliste ou visite à domicile ')
+            quiz.push('téléconsultation ou médecin généraliste ou visite à domicile ')
             if (manqueSouffle == true || difficulteAvalaison == true) {
-                console.log('appelez le 141 ')
+                quiz.push('appelez le 141 ')
             }
         } else if (facteursGravitéMineurs >= 2) {
-            console.log('appel 141')
+            quiz.push('appel 141')
         }
     } else if (facteursGravitéMajeurs >= 1) {
-        console.log('Appel 141')
+        quiz.push('Appel 141')
     }
 
-} else if (fievre == true && toux == true) {
+} else
+if (symptômes.fievre == true && symptômes.toux == true) {
     if (facteursPronostiques == 0) {
         if ((facteursGravité == 0) || (facteursGravitéMineurs >= 1 && facteursGravitéMajeurs == 0)) {
-            console.log(' téléconsultation ou médecin généraliste ou visite à domicile')
+            quiz.push(' téléconsultation ou médecin généraliste ou visite à domicile')
         }
     } else if (facteursPronostiques >= 1) {
         if (facteursGravité == 0) {
-            console.log('téléconsultation ou médecin généraliste ou visite à domicile ')
+            quiz.push('téléconsultation ou médecin généraliste ou visite à domicile ')
         } else if (facteursGravitéMineurs >= 1) {
-            console.log('téléconsultation ou médecin généraliste ou visite à domicile ')
+            quiz.push('téléconsultation ou médecin généraliste ou visite à domicile ')
         } else if (facteursGravitéMineurs >= 2) {
-            console.log('Appel 141')
+            quiz.push('Appel 141')
         }
     } else if (facteursGravitéMajeurs >= 1) {
-        console.log('Appel 141')
+        quiz.push('Appel 141')
     }
-} else if (fievre == true || toux == true || malGorge == true || courbatures == true) {
+} else if (symptômes.fievre == true || symptômes.toux == true || symptômes.malGorge == true || symptômes.courbatures == true) {
     if (facteursGravité == 0) {
-        console.log('Votre situation ne relève probablement pas du Covid-19. Consultez votre médecin au moindre doute.')
+        quiz.push('Votre situation ne relève probablement pas du Covid-19. Consultez votre médecin au moindre doute.')
     } else if (facteursPronostiques >= 1 || facteursGravitéMajeurs >= 1 || facteursGravitéMineurs >= 1) {
-        console.log('Votre situation ne relève probablement pas du Covid-19. Un avis médical est recommandé.Au moindre doute, appelez le 141. ')
+        quiz.push('Votre situation ne relève probablement pas du Covid-19. Un avis médical est recommandé.Au moindre doute, appelez le 141. ')
     }
 } else if (facteursPronostiques == 0 && facteursGravité == 0) {
-    console.log('Votre situation ne relève probablement pas du Covid-19. N’hésitez pas à contacter votre médecin en cas de doute.Vous pouvez refaire le test en cas de nouveau symptôme pour réévaluer la situation.Pour toute information concernant le Covid - 19 allez vers la page d’ accueil.')
+    quiz.push('Votre situation ne relève probablement pas du Covid-19. N’hésitez pas à contacter votre médecin en cas de doute.Vous pouvez refaire le test en cas de nouveau symptôme pour réévaluer la situation.Pour toute information concernant le Covid - 19 allez vers la page d’ accueil.')
 }

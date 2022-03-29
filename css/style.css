@@ -26,8 +26,8 @@ body {
 }
 
 button {
-    background-image: url(Assets/SVG/MergedBar-61.svg) !important;
-    background-repeat: no-repeat !important;
+    background-image: url(Assets/SVG/MergedBar-61.svg);
+    background-repeat: no-repeat;
 }
 
 button:hover {
@@ -39,11 +39,10 @@ button:hover {
     width: 22px;
     height: 22px;
     border-radius: 50%;
-    /* color: #00aaff; */
 }
 
 #cir-blue {
-    background-color: #00aaff;
+    background-color: rgba(0, 0, 255, 0.678);
 }
 
 section {
