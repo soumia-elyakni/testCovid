@@ -259,6 +259,7 @@ let traitementImmunosuppresseur = false;
 //qst1 : FIEVRE
 if (quiz[cont].reponse == 'oui') {
   fievre == true;
+  Push(reponse).quiz[cont]
 }
 
 //qst3 : TOUX
