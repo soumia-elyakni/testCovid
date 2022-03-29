@@ -261,6 +261,8 @@ let enceiente = false;
 let diminutionImmunitaire = false;
 let traitementImmunosuppresseur = false;
 
+
+
 //qst1 : FIEVRE
 if (quiz[cont].reponse == 'oui') {
   fievre == true;
