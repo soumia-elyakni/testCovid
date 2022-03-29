@@ -25,9 +25,9 @@ body {
     width: 100%;
 }
 
-button{
-    background-image: url(Assets/SVG/MergedBar-61.svg);
-    background-repeat: no-repeat;
+button {
+    background-image: url(Assets/SVG/MergedBar-61.svg) !important;
+    background-repeat: no-repeat !important;
 }
 
 button:hover {
@@ -41,23 +41,22 @@ button:hover {
     border-radius: 50%;
     /* color: #00aaff; */
 }
-#cir-blue{
-    background-color: #00aaff;
 
+#cir-blue {
+    background-color: #00aaff;
 }
+
 section {
     background-color: rgb(235, 235, 235);
-    height: 55vh;
-    margin: 0 250px ;
-    padding: 50px;
+    margin: 0 150px 0 150px;
+    padding: 35px;
     border: 2px solid rgb(197, 180, 180);
 }
 
-#app{
+#app {
     background-color: white;
-    height: 55vh;
-    margin: 0 250px ;
-    padding: 50px;
+    margin: 0 150px 0 150px;
+    padding: 25px;
     border: 2px solid rgb(197, 180, 180);
 }
 
@@ -71,6 +70,28 @@ header>div>ul>li>a>img {
 
 .flag {
     border-radius: 100px;
+}
+
+.progress {
+    background-color: #d8d8d8;
+    border-radius: 20px;
+    position: relative;
+    height: 20px;
+    width: 100%;
+}
+
+.progress-done {
+    background: linear-gradient(to left, #1078AD, #00aaff);
+    box-shadow: 0 3px 3px -5px #00aaff, 0 2px 5px #1078AD;
+    border-radius: 20px;
+    color: rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 0;
+    opacity: 0;
+    transition: 1s ease 0.3s;
 }
 
 @media screen and (max-width: 768px) {
@@ -91,27 +112,4 @@ header>div>ul>li>a>img {
     header>.menu>ul {
         margin-right: 0 !important;
     }
-}
-
-.progress {
-	background-color: #d8d8d8;
-	border-radius: 20px;
-	position: relative;
-	margin: 15px 0;
-	height: 20px;
-	width: 58vw;
-}
-
-.progress-done {
-	background: linear-gradient(to left, #1078AD, #00aaff);
-	box-shadow: 0 3px 3px -5px #00aaff, 0 2px 5px #1078AD;
-	border-radius: 20px;
-	color: rgb(0, 0, 0);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: 100%;
-	width: 0;
-	opacity: 0;
-	transition: 1s ease 0.3s;
 }
