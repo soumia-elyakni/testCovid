@@ -194,12 +194,21 @@ const contentCh = document.getElementById("contentCh");
 
 var cont = 0;
 ques.innerHTML = `${quiz[cont].question}`;
-contentCh.innerHTML += choix();
+contentCh.innerHTML = choix();
+if (cont == 0) {
+    pre.style.visibility = "hidden"
+}
+
 
 function next() {
     cont++;
     ques.innerHTML = `${quiz[cont].question} `;
     contentCh.innerHTML = choix();
+    if (cont > 0 && cont <= 20) {
+        pre.style.visibility = "visible"
+    } else if (cont == 21) {
+        sui.innerText = "Termine"
+    }
 
 }
 
@@ -207,7 +216,12 @@ function precedent() {
     cont--;
     ques.innerHTML = `${quiz[cont].question} `;
     contentCh.innerHTML = choix();
+    if (cont == 0) {
+        pre.style.visibility = "hidden"
+    }
 }
+
+
 
 
 function choix() {
@@ -220,11 +234,12 @@ function choix() {
     }
 
     if (quiz[cont].type == "number") {
-        content += '<input class="w-75" type="' + quiz[cont].type + '" max="' + quiz[cont].choix[1] + '" min="' + quiz[cont].choix[0] + '" id="num" oninput="checkNum()" value="' + quiz[cont].choix + '" placeholder="' + quiz[cont].choix[1] + '-' + quiz[cont].choix[0] + '">'
+        content += '<input type="' + quiz[cont].type + '" max="' + quiz[cont].choix[1] + '" min="' + quiz[cont].choix[0] + '" id="num" oninput="checkNum()" value="' + quiz[cont].choix + '" placeholder="' + quiz[cont].choix[1] + ' - ' + quiz[cont].choix[0] + '">'
     }
     return content;
-
 }
+
+
 
 function check(i) {
     quiz[cont].reponse = quiz[cont].choix[i]
@@ -232,8 +247,12 @@ function check(i) {
 
 function checkNum() {
     let num = document.getElementById('num')
+    if (num.value != "") {
+        sui.disabled = false;
+    }
     quiz[cont].reponse = num.value
 }
+
 
 //FACTEURS DE GRAVITES (si un element dans l'objet est incrementé l'objet aussi sera incrementé et si les 2 egal 0 l'objet aussi = 0)
 let facteursGravité = {
@@ -268,7 +287,6 @@ let facteursPronostiques = {
     traitementImmunosuppresseur: false
 }
 
-
 //qst1 : FIEVRE
 if (quiz[0].reponse == 'oui') {
     symptômes.fievre == true;
@@ -280,6 +298,10 @@ if (temperature >= 39) {
 }
 if (temperature <= 35.4) {
     facteursGravité.facteursGravitéMajeurs++;
+}
+//qst1 : FIEVRE33
+if (quiz[cont].reponse == 'oui') {
+    fievre == true;
 }
 
 //qst3 : TOUX
@@ -382,9 +404,9 @@ if ((symptômes.fievre == true || symptômes.toux == true) && (symptômes.malGor
         }
 
         if ((facteursGravité == 0 && age > 50 && age < 69) || facteursGravitéMineurs >= 1) {
-            a.push('téléconsultation ou médecin généraliste ou visite à domicile')
+            quiz.push('téléconsultation ou médecin généraliste ou visite à domicile')
             if (manqueSouffle == true || difficulteAvalaison == true) {
-                a.push('appelez le 141 ')
+                quiz.push('appelez le 141 ')
             }
         }
     } else
@@ -392,7 +414,7 @@ if ((symptômes.fievre == true || symptômes.toux == true) && (symptômes.malGor
         if (facteursGravité == 0) {
             quiz.push('téléconsultation ou médecin généraliste ou visite à domicile')
             if (manqueSouffle == true || difficulteAvalaison == true) {
-                a.push('appelez le 141 ')
+                quiz.push('appelez le 141 ')
             }
         } else if (facteursGravitéMineurs == 1) {
             quiz.push('téléconsultation ou médecin généraliste ou visite à domicile ')
