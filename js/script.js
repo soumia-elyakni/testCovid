@@ -232,6 +232,7 @@ function choix() {
   if(quiz[cont].type == "radio"){
     for(let i = 0 ; i <= quiz[cont].choix.length-1; i++){
       content +=  '<input type="'+ quiz[cont].type +'" value="'+quiz[cont].choix[i]+'" onclick="check('+ i +')" name="ouiAndNon"> <label for="'+quiz[cont].choix[i]+'">'+quiz[cont].choix[i]+'</label>';
+     
     }
   }
 
@@ -241,18 +242,17 @@ function choix() {
   return content;
 }
 
+
+
 function check(i){
-  if(quiz[cont].choix[i] !=  ""){
-    sui.disabled = false;
-  }
   quiz[cont].reponse = quiz[cont].choix[i]
 }
 
 function checkNum(){
-  if(quiz[cont].choix[i] !=  ""){
+  let num = document.getElementById('num')
+  if(num.value !=  ""){
     sui.disabled = false;
   }
-  let num = document.getElementById('num')
   quiz[cont].reponse =  num.value
 }
 
