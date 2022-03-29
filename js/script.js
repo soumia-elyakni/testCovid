@@ -223,7 +223,6 @@ function choix() {
         content += '<input type="'+ quiz[cont].type +'" max="'+ quiz[cont].choix[1]+'" min="'+quiz[cont].choix[0]+'" id="num" oninput="checkNum()" value="'+quiz[cont].choix+'" placeholder="' + quiz[cont].choix[1] + '-' + quiz[cont].choix[0] + '">'
   }
     return content;
-
 }
 
 function check(i){
